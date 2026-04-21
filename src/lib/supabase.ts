@@ -1,7 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Use environment variables if available, otherwise fallback to provided credentials
-const supabaseUrl = (import.meta as any).env.VITE_SUPABASE_URL || 'https://ahslvqqzpncnumzpdodt.supabase.co';
-const supabaseAnonKey = (import.meta as any).env.VITE_SUPABASE_ANON_KEY || 'sb_publishable_wr9UAfY7cb0acQU65sOzag_97jbmyge';
+// Use environment variables for Supabase connection
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.warn('Supabase 환경변수가 설정되지 않았습니다. 문의하기 기능이 작동하지 않을 수 있습니다.');
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);

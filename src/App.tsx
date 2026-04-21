@@ -40,7 +40,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -53,7 +53,7 @@ const Header = () => {
         </nav>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-gray-900" onClick={() => setIsOpen(!isOpen)}>
+        <button className="lg:hidden text-gray-900" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -65,7 +65,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-6">
               {navItems.map((item) => (

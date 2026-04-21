@@ -12,7 +12,7 @@ const Home = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-light/20 -skew-x-12 translate-x-1/4 z-0" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-point/5 rounded-full blur-3xl z-0" />
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
           <div className="max-w-3xl">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Link 
                 to="/business" 
